@@ -1,0 +1,170 @@
+[
+    {
+        "name": "P2000/Glock-18",
+        "code": ["hkp2000", "glock"],
+        "price": [200, 200]
+    },
+    {
+        "name": "P250",
+        "code": "p250",
+        "price": 300
+    },
+    {
+        "name": "Desert Eagle",
+        "code": "deagle",
+        "price": 650
+    },
+    {
+        "name": "Dual Berettas",
+        "code": "elite",
+        "price": 700
+    },
+    {
+        "name": "Five-SeveN/Tec-9",
+        "code": ["fiveseven", "tec9"],
+        "price": [500, 500]
+    },
+
+
+
+    {
+        "name": "Nova",
+        "code": "nova",
+        "price": 1200
+    },
+    {
+        "name": "XM1014",
+        "code": "xm1014",
+        "price": 2200
+    },
+    {
+        "name": "MAG-7/Saved-Off",
+        "code": ["mag7", "sawedoff"],
+        "price": [1200, 1800]
+    },
+
+
+
+    {
+        "name": "MP9/MAC-10",
+        "code": ["mp9", "mac10"],
+        "price": [1250, 1050]
+    },
+    {
+        "name": "MP7",
+        "code": "mp7",
+        "price": 1700
+    },
+    {
+        "name": "UMP-45",
+        "code": "ump45",
+        "price": 1200
+    },
+    {
+        "name": "PP-Bizon",
+        "code": "bizon",
+        "price": 1400
+    },
+    {
+        "name": "P90",
+        "code": "p90",
+        "price": 2350
+    },
+
+
+
+    {
+        "name": "FAMAS/Galil",
+        "code": ["famas", "galilar"],
+        "price": [2250, 2000]
+    },
+    {
+        "name": "M4A4/AK-47",
+        "code": ["m4a1", "ak47"],
+        "price": [3100, 2700]
+    },
+    {
+        "name": "SSG 08 (Scout)",
+        "code": "scout",
+        "price": 2750
+    },
+    {
+        "name": "AUG/SG 553",
+        "code": ["aug", "sg550"],
+        "price": [3300, 3000]
+    },
+    {
+        "name": "AWP",
+        "code": "awp",
+        "price": 4750
+    },
+    {
+        "name": "SCAR-20/G3SG1",
+        "code": ["scar20", "g3sg1"],
+        "price": [5000, 5000]
+    },
+
+
+
+    {
+        "name": "M249",
+        "code": "m249",
+        "price": 5200
+    },
+    {
+        "name": "Negev",
+        "code": "negev",
+        "price": 5700
+    },
+
+
+
+    {
+        "name": "Incendiary/Molotov",
+        "code": ["incgrenade", "molotov"],
+        "price": [850, 500]
+    },
+    {
+        "name": "Decoy grenade",
+        "code": "decoy",
+        "price": 50
+    },
+    {
+        "name": "HE grenade",
+        "code": "hegrenade",
+        "price": 300
+    },
+    {
+        "name": "Flashbang",
+        "code": "flashbang",
+        "price": 200
+    },
+    {
+        "name": "Smoke grenade",
+        "code": "smokegrenade",
+        "price": 300
+    },
+
+
+
+    {
+        "name": "Kevlar+helmet",
+        "code": "vesthelm",
+        "price": 1000 
+    },
+    {
+        "name": "Kevlar",
+        "code": "kevlar",
+        "price": 650
+    },
+    {
+        "name": "Defuse Kit",
+        "code": "defuser",
+        "price": 400
+    },
+    {
+        "name": "Zeus x27",
+        "code": "taser",
+        "price": 1000
+    }
+]
