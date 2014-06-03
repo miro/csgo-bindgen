@@ -13,10 +13,6 @@ define([
         mainRegion: '#root'
     });
 
-    application.data = {}; // Holder for all the app's data
-
-    // Event bus
-    application.vent = _.clone(Backbone.Events);
 
     return application;
 });

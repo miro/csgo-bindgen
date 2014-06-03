@@ -7,7 +7,7 @@ require.config({
         jquery: '../bower_components/jquery/dist/jquery',
         text: '../bower_components/requirejs-text/text',
         moment: '../bower_components/moment/moment',
-        fortune: '../../fortune500.json'
+        templates: '../templates'
     },
 
     shim: {
@@ -29,12 +29,17 @@ require.config({
 require([
 	'backbone',
 	'underscore',
+	'router',
 	'app'
 ], function(
 	Backbone,
 	_,
+	Router,
 	app
 ) {
+
+	app.router = new Router();
+	Backbone.history.start();
 
 	console.log("App started");
 	return app;
