@@ -1,0 +1,22 @@
+{
+  "name": "csgo-bindgen",
+  "version": "0.0.1",
+  "homepage": "https://github.com/miro/csgo-bindgen",
+  "authors": [
+    "Miro Nieminen <miro.nieminen@gmail.com>"
+  ],
+  "main": "app/index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "Proprietary",
+  "private": true,
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "marionette": "*",
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.11",
+    "requirejs-text": "~2.0.10",
+    "moment": "~2.6.0"
+  }
+}

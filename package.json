@@ -1,0 +1,24 @@
+{
+  "name": "csgo-bindgen",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miro/csgo-bindgen.git"
+  },
+  "contributors": [
+    "Miro Nieminen <miro.nieminen@gmail.com>"
+  ],
+  "dependencies": {
+    "bower": "~1.3.4"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-connect": "*",
+    "grunt-sass": "~0.12.1",
+    "grunt-autoprefixer": "~0.7.3",
+    "express": "~4.0.0",
+    "morgan": "~1.0.0"
+  },
+  "private": true
+}
