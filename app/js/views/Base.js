@@ -2,12 +2,14 @@ define([
     'underscore',
     'marionette',
     'text!templates/base.html',
-    'views/Numpad'
+    'views/Numpad',
+    'views/Guns'
 ], function(
     _,
     Marionette,
     template,
-    NumpadView
+    NumpadView,
+    GunsView
     ) {
 
     return Marionette.Layout.extend({
@@ -27,12 +29,13 @@ define([
         },
 
         initialize: function(options) {
-            var numpadView = new NumpadView();
-            this.numpadRegion.show(numpadView);
+            this.numpadView = new NumpadView();
+            this.gunsView = new GunsView();
         },
 
-        onShow: function() {
-            // this.details.show(this.detailsView);
+        onRender: function() {
+            this.numpadRegion.show(this.numpadView);
+            this.gunsRegion.show(this.gunsView);
         }
     });
 });
