@@ -14,7 +14,7 @@ define([
 
     return Marionette.Layout.extend({
 
-        className: "base-wrap",
+        className: "base-wrap clearfix",
 
         template: _.template(template),
 

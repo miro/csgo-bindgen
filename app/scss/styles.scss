@@ -1,2 +1,47 @@
 
 
+.column {
+	float: left;
+	margin-right: 20px;
+	border: 1px solid black;
+
+}
+
+.numpad-view {
+	width: 260px;
+
+	#buttons {
+		button.key {
+			float: left;
+			height: 80px;
+			width: 80px;
+			display: block;
+
+			margin: 2px;
+			background-color: gray;
+		}
+	}
+}
+
+
+
+
+
+
+
+/*
+    CLEARFIX HACK
+    (http://nicolasgallagher.com/micro-clearfix-hack/)
+*/
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
