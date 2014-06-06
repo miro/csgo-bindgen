@@ -2,21 +2,43 @@ define([
     'jquery',
     'underscore',
     'marionette',
+    'app',
     'views/ButtonView',
     'text!templates/key.html'
 ], function(
     $,
     _,
     Marionette,
+    app,
     ButtonView,
     template
     ) {
 
-    return ButtonView.extend({
+    return Backbone.Marionette.ItemView.extend({
         template: _.template(template),
         tagName: 'button',
-        className: 'key'
+        className: 'key',
 
-        // TODO: unselect all keys before selecting a new key
+        events: {
+            'click':    'select'
+        },
+
+        initialize: function() {
+            this.model.set('isSelected', false);
+            this.listenTo(app.vent, 'key:selected', this.unSelect);
+        },
+
+        select: function() {
+            app.vent.trigger('key:selected');
+
+            this.model.set('isSelected', true);
+            $(this.el).addClass('selected');
+        },
+
+        unSelect: function() {
+            this.model.set('isSelected', false);
+            $(this.el).removeClass('selected');
+        }
+
     });
 });
