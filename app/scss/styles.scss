@@ -24,6 +24,13 @@ body {
 
 }
 
+button {
+	&.selected {
+		background-color: navy !important;
+	}
+}
+
+
 .numpad-view {
 	width: 260px;
 
@@ -43,7 +50,7 @@ body {
 .guns-view {
 	width: 340px;
 
-	.gun {
+	button.gun {
 		width: 100px;
 		height: 50px;
 		margin: 4px;

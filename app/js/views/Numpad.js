@@ -2,24 +2,20 @@ define([
     'underscore',
     'marionette',
     'text!templates/numpad.html',
-    'text!templates/key.html',
+    'views/Key',
     'text!data/keys-data.json'
 ], function(
     _,
     Marionette,
     template,
-    keyTemplate,
+    KeyView,
     keysJSON
     ) {
-
-    MyItemView = Backbone.Marionette.ItemView.extend({template: _.template(keyTemplate)});
-
-
 
     return Backbone.Marionette.CompositeView.extend({
         template: _.template(template),
         className: 'numpad-view',
-        itemView: MyItemView,
+        itemView: KeyView,
         itemViewContainer: '#buttons',
 
         initialize: function() {

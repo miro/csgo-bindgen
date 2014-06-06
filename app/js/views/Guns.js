@@ -2,24 +2,20 @@ define([
     'underscore',
     'marionette',
     'text!templates/guns.html',
-    'text!templates/gun.html',
+    'views/Gun',
     'text!data/guns-data.json'
 ], function(
     _,
     Marionette,
     template,
-    gunTemplate,
+    GunView,
     gunsJSON
     ) {
-
-    MyItemView = Backbone.Marionette.ItemView.extend({template: _.template(gunTemplate)});
-
-
 
     return Backbone.Marionette.CompositeView.extend({
         template: _.template(template),
         className: 'guns-view',
-        itemView: MyItemView,
+        itemView: GunView,
         itemViewContainer: '#guns',
 
         initialize: function() {
