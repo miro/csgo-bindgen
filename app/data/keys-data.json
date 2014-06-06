@@ -1,85 +1,82 @@
 [
-    [
-        {
-            "key": "/",
-            "code": "kp_slash"
-        },
-        {
-            "key": "*",
-            "code": "*",
-            "height": 2
-        },
-        {
-            "key": "-",
-            "code": "kp_minus",
-            "height": 2
-        }
-    ],
 
-    [
-        {
-            "key": "7",
-            "code": "kp_home"
-        },
-        {
-            "key": "8",
-            "code": "kp_uparrow"
-        },
-        {
-            "key": "9",
-            "code": "kp_pgup"
-        },
-        {
-            "key": "+",
-            "code": "kp_plus",
-            "colspan": 2
-        }
-    ],
+    {
+        "key": "/",
+        "code": "kp_slash"
+    },
+    {
+        "key": "*",
+        "code": "*",
+        "height": 2
+    },
+    {
+        "key": "-",
+        "code": "kp_minus",
+        "height": 2
+    },
 
-    [
-        {
-            "key": "4",
-            "code": "kp_leftarrow"
-        },
-        {
-            "key": "5",
-            "code": "kp_5"
-        },
-        {
-            "key": "6",
-            "code": "kp_rightarrow"
-        }
-    ],
 
-    [
-        {
-            "key": "1",
-            "code": "kp_end"
-        },
-        {
-            "key": "2",
-            "code": "kp_downarrow"
-        },
-        {
-            "key": "3",
-            "code": "kp_pgdn"
-        },
-        {
-            "key": "Enter",
-            "code": "kp_enter",
-            "colspan": 2
-        }
-    ],
 
-    [
-        {
-            "key": "0",
-            "code": "kp_ins",
-            "rowspan": 2
-        },
-        {
-            "key": ",",
-            "code": "kp_del"
-        }
-    ]
+    {
+        "key": "7",
+        "code": "kp_home"
+    },
+    {
+        "key": "8",
+        "code": "kp_uparrow"
+    },
+    {
+        "key": "9",
+        "code": "kp_pgup"
+    },
+    {
+        "key": "+",
+        "code": "kp_plus",
+        "colspan": 2
+    },
+
+
+    {
+        "key": "4",
+        "code": "kp_leftarrow"
+    },
+    {
+        "key": "5",
+        "code": "kp_5"
+    },
+    {
+        "key": "6",
+        "code": "kp_rightarrow"
+    },
+
+
+    {
+        "key": "1",
+        "code": "kp_end"
+    },
+    {
+        "key": "2",
+        "code": "kp_downarrow"
+    },
+    {
+        "key": "3",
+        "code": "kp_pgdn"
+    },
+    {
+        "key": "Enter",
+        "code": "kp_enter",
+        "colspan": 2
+    },
+
+
+    {
+        "key": "0",
+        "code": "kp_ins",
+        "rowspan": 2
+    },
+    {
+        "key": ",",
+        "code": "kp_del"
+    }
+
 ]
