@@ -15,7 +15,12 @@ define([
     return Backbone.Marionette.ItemView.extend({
         template: _.template(template),
         tagName: 'button',
-        className: 'key',
+        className: function() {
+            var name = 'key';
+            name += (this.model.get('height') ? ' tall' : '');
+            name += (this.model.get('width') ? ' wide' : '');
+            return name;
+        },
 
         events: {
             'click':    'select'

@@ -32,17 +32,22 @@ button {
 
 
 .numpad-view {
-	width: 260px;
+	width: 360px;
+	display: inline-block;
 
 	#buttons {
 		button.key {
-			float: left;
-			height: 80px;
-			width: 80px;
-			display: block;
-
 			margin: 2px;
 			background-color: gray;
+
+			display: inline-block;
+		    width: 80px;
+		    height: 80px;
+		    margin: 5px;
+		    float: right;
+
+		    &.tall { height: 170px;}
+			&.wide { width: 170px;}
 		}
 	}
 }

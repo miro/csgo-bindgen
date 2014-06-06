@@ -2,14 +2,12 @@
     
     {
         "key": "-",
-        "code": "kp_minus",
-        "height": 2
+        "code": "kp_minus"
     },
 
     {
         "key": "*",
-        "code": "*",
-        "height": 2
+        "code": "*"
     },
 
     {
@@ -84,7 +82,7 @@
     {
         "key": "0",
         "code": "kp_ins",
-        "rowspan": 2
+        "width": 2
     }
     
 
