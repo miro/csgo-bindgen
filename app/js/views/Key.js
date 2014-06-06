@@ -24,6 +24,7 @@ define([
         initialize: function() {
             this.model.set('isSelected', false);
             this.listenTo(app.vent, 'key:selected', this.unSelect);
+            this.listenTo(app.vent, 'bind:created', this.unSelect);
         },
 
         select: function() {

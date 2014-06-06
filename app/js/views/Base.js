@@ -63,6 +63,9 @@ define([
             });
 
             app.data.binds.add(bindModel);
+
+            app.vent.trigger('bind:created');
+            
         }
     });
 });
