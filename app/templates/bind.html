@@ -1,6 +1,6 @@
-<p><%= key.get('key') %></p>
-<div class="gun">
+<div class="key"><%= key.get('key') %></div>
+<div class="guns-list">
 	<% _.each(guns, function(gun) { %>
-		<%= gun.get('name') %>
+		<p><%= gun.get('name') %></p>
 	<% }); %>
 </div>

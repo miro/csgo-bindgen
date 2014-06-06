@@ -20,11 +20,10 @@ body {
 .column {
     float: left;
     margin-right: 20px;
-    border: 1px solid black;
-
 }
 
 button {
+    cursor: pointer;
     &.selected {
         background-color: navy !important;
     }
@@ -66,6 +65,34 @@ button {
         background-color: gray;
 
         p { margin: 0; }
+    }
+}
+
+
+.binds-view {
+    width: 300px;
+
+    div.bind {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 2px;
+        background-color: gray;
+        overflow: auto;
+
+        .key {
+            float: left;
+            height: 100%;
+            width: 50px;
+            padding: 4px;
+            background-color: white;
+        }
+
+        .guns-list {
+            float: left;
+            height: 100%;
+            display: block;
+        }
     }
 }
 
