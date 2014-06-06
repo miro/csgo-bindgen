@@ -17,9 +17,9 @@ define([
             
             _.each(this.get('guns'), function getBuyCommands(gun) {
                 var gunCodes = gun.get('code');
-                gunCodes = gunCodes.length ? gunCodes : [gunCodes];
+                gunCodes = gunCodes instanceof Array ? gunCodes : [gunCodes];
                 _.each(gunCodes, function(gunCode) {
-                    script += (' buy ' + gunCode + ';');
+                    script += ('buy ' + gunCode + ';');
                 });
             });
 
