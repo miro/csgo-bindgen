@@ -1,1 +1,6 @@
-<p>bind</p>
+<p><%= key.get('key') %></p>
+<div class="gun">
+	<% _.each(guns, function(gun) { %>
+		<%= gun.get('name') %>
+	<% }); %>
+</div>

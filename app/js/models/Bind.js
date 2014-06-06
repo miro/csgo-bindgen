@@ -13,7 +13,7 @@ define([
         },
 
         getBindingString: function getBindingString() {
-            console.log(this.get('key'), this.get('guns'));
+            return this.get('key').get('key') + this.get('guns');
         }
     });
 });
