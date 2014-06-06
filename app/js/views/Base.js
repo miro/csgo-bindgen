@@ -41,7 +41,6 @@ define([
             this.numpadView = new NumpadView();
             this.gunsView = new GunsView();
             this.bindsView = new BindsView({collection: app.data.binds});
-            debugger;
         },
 
         onRender: function() {
