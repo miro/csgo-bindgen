@@ -1,16 +1,19 @@
 define([
+    'jquery',
     'underscore',
     'marionette',
-    'text!templates/base.html'
+    'views/Bind'
 ], function(
+    $,
     _,
     Marionette,
-    template
+    BindView
     ) {
 
-    MyItemView = Backbone.Marionette.ItemView.extend({});
-
-    return Backbone.Marionette.CollectionView.extend({
-        itemView: MyItemView
+    return Backbone.Marionette.CompositeView.extend({
+        template: _.template('<div id="binds"></div>'),
+        className: 'binds-view',
+        itemView: BindView,
+        itemViewContainer: '#binds'
     });
 });

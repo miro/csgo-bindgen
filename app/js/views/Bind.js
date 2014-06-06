@@ -3,7 +3,7 @@ define([
     'underscore',
     'marionette',
     'views/ButtonView',
-    'text!templates/key.html'
+    'text!templates/bind.html'
 ], function(
     $,
     _,
@@ -14,9 +14,8 @@ define([
 
     return ButtonView.extend({
         template: _.template(template),
-        tagName: 'button',
-        className: 'key'
+        tagName: 'div',
+        className: 'bind'
 
-        // TODO: unselect all keys before selecting a new key
     });
 });

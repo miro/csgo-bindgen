@@ -1,15 +1,21 @@
 define([
     'underscore',
     'marionette',
+    'app',
     'text!templates/base.html',
     'views/Numpad',
-    'views/Guns'
+    'views/Guns',
+    'views/Binds',
+    'models/Bind'
 ], function(
     _,
     Marionette,
+    app,
     template,
     NumpadView,
-    GunsView
+    GunsView,
+    BindsView,
+    BindModel
     ) {
 
     return Marionette.Layout.extend({
@@ -29,17 +35,35 @@ define([
         },
 
         initialize: function(options) {
+            app.data.binds = new Backbone.Collection();
+            app.data.binds.model = BindModel;
+
             this.numpadView = new NumpadView();
             this.gunsView = new GunsView();
+            this.bindsView = new BindsView({collection: app.data.binds});
+            debugger;
         },
 
         onRender: function() {
             this.numpadRegion.show(this.numpadView);
             this.gunsRegion.show(this.gunsView);
+            this.bindsRegion.show(this.bindsView);
         },
 
         createBind: function() {
-            console.log(this.numpadView.getSelected());
+            var selectedKey = this.numpadView.getSelected();
+            var selectedGuns = this.gunsView.getSelected();
+
+            if (!selectedKey || !selectedGuns) {
+                return;
+            }
+
+            var bindModel = new BindModel({
+                key: selectedKey,
+                guns: selectedGuns
+            });
+
+            app.data.binds.add(bindModel);
         }
     });
 });

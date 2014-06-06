@@ -26,7 +26,7 @@ define([
             var selectedModels =  _.filter(this.collection.models, function filterUnSelected(model) {
                 return model.get('isSelected');
             });
-            return selectedModels;
+            return selectedModels[0];
         }
     });
 });
