@@ -18,55 +18,55 @@ body {
 // ---------------------------------------
 
 .column {
-	float: left;
-	margin-right: 20px;
-	border: 1px solid black;
+    float: left;
+    margin-right: 20px;
+    border: 1px solid black;
 
 }
 
 button {
-	&.selected {
-		background-color: navy !important;
-	}
+    &.selected {
+        background-color: navy !important;
+    }
 }
 
 
 .numpad-view {
-	width: 360px;
-	display: inline-block;
+    width: 360px;
+    display: inline-block;
 
-	#buttons {
-		button.key {
-			margin: 2px;
-			background-color: gray;
+    #buttons {
+        button.key {
+            margin: 2px;
+            background-color: gray;
 
-			display: inline-block;
-		    width: 80px;
-		    height: 80px;
-		    margin: 5px;
-		    float: right;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            margin: 5px;
+            float: right;
 
-		    &.tall { height: 170px;}
-			&.wide { width: 170px;}
-		}
-	}
+            &.tall { height: 170px;}
+            &.wide { width: 170px;}
+        }
+    }
 }
 
 .guns-view {
-	width: 340px;
+    width: 340px;
 
-	button.gun {
-		width: 100px;
-		height: 50px;
-		margin: 4px;
-		padding: 2px;
-		display: block;
-		float: left;
+    button.gun {
+        width: 100px;
+        height: 50px;
+        margin: 4px;
+        padding: 2px;
+        display: block;
+        float: left;
 
-		background-color: gray;
+        background-color: gray;
 
-		p { margin: 0; }
-	}
+        p { margin: 0; }
+    }
 }
 
 
