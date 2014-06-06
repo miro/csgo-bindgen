@@ -19,14 +19,14 @@ define([
             "click": "onClick"
         },
 
-        isSelected: false,
+        initialize: function() {
+            this.model.set('isSelected', false);
+        },
 
         onClick: function(e) {
-            this.isSelected = !this.isSelected;
+            this.model.set('isSelected', !this.model.get('isSelected'));
             $(this.el).toggleClass('selected');
 
-            console.log("huraa", this.isSelected, this.model.attributes);
-            this.render();
         }
     });
 });

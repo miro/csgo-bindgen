@@ -25,7 +25,7 @@ define([
         },
 
         events: {
-            "click .add-button" : "_addClicked"
+            "click .bind" : "createBind"
         },
 
         initialize: function(options) {
@@ -36,6 +36,10 @@ define([
         onRender: function() {
             this.numpadRegion.show(this.numpadView);
             this.gunsRegion.show(this.gunsView);
+        },
+
+        createBind: function() {
+            console.log(this.numpadView.getSelected());
         }
     });
 });

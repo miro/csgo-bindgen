@@ -20,6 +20,13 @@ define([
 
         initialize: function() {
             this.collection = new Backbone.Collection(_.flatten(JSON.parse(keysJSON)));
+        },
+
+        getSelected: function() {
+            var selectedModels =  _.filter(this.collection.models, function filterUnSelected(model) {
+                return model.get('isSelected');
+            });
+            return selectedModels;
         }
     });
 });
