@@ -2,17 +2,15 @@ define([
     'jquery',
     'underscore',
     'marionette',
-    'views/ButtonView',
     'text!templates/bind.html'
 ], function(
     $,
     _,
     Marionette,
-    ButtonView,
     template
     ) {
 
-    return ButtonView.extend({
+    return Backbone.Marionette.ItemView.extend({
         template: _.template(template),
         tagName: 'div',
         className: 'bind'

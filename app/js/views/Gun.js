@@ -2,13 +2,11 @@ define([
     'jquery',
     'underscore',
     'marionette',
-    'views/ButtonView',
     'text!templates/gun.html'
 ], function(
     $,
     _,
     Marionette,
-    ButtonView,
     template
     ) {
 
@@ -16,7 +14,6 @@ define([
         template: _.template(template),
         tagName: 'button',
         className: 'gun',
-
         events: {
             "click": "onClick"
         },

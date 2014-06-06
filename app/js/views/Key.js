@@ -3,14 +3,12 @@ define([
     'underscore',
     'marionette',
     'app',
-    'views/ButtonView',
     'text!templates/key.html'
 ], function(
     $,
     _,
     Marionette,
     app,
-    ButtonView,
     template
     ) {
 
