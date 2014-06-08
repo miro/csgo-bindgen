@@ -4,3 +4,6 @@
 		<p><%= gun.get('name') %></p>
 	<% }); %>
 </div>
+<div class="price">
+	<%= price.ctPrice != price.tPrice ? (price.ctPrice + " / " + price.tPrice) : price.ctPrice %>
+</div>

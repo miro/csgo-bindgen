@@ -18,7 +18,8 @@ define([
         serializeData: function() {
             var data = Marionette.ItemView.prototype.serializeData.apply(this);
             data = _.extend(data, {
-                bindingString: this.model.getBindingString()
+                bindingString: this.model.getBindingString(),
+                price: this.model.getBindingPrice()
             });
             return data;
         }
