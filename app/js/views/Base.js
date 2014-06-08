@@ -2,20 +2,22 @@ define([
     'underscore',
     'marionette',
     'app',
-    'text!templates/base.html',
+    'collections/Binds',
     'views/Numpad',
     'views/Guns',
     'views/Binds',
-    'models/Bind'
+    'models/Bind',
+    'text!templates/base.html'
 ], function(
     _,
     Marionette,
     app,
-    template,
+    BindsCollection,
     NumpadView,
     GunsView,
     BindsView,
-    BindModel
+    BindModel,
+    template
     ) {
 
     return Marionette.Layout.extend({
@@ -35,7 +37,7 @@ define([
         },
 
         initialize: function(options) {
-            app.data.binds = new Backbone.Collection();
+            app.data.binds = new BindsCollection();
             app.data.binds.model = BindModel;
 
             this.numpadView = new NumpadView();
@@ -54,6 +56,11 @@ define([
             var selectedGuns = this.gunsView.getSelected();
 
             if (!selectedKey || !selectedGuns) {
+                return;
+            }
+
+            if (app.data.binds.isKeyBinded(selectedKey)) {
+                console.log("Key already binded!");
                 return;
             }
 
