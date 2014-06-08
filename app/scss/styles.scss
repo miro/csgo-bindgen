@@ -22,8 +22,12 @@ body {
     margin-right: 20px;
 }
 
-button {
+button,
+.button {
     cursor: pointer;
+    background-color: gray;
+    margin: 5px;
+
     &.selected {
         background-color: navy !important;
     }
@@ -36,13 +40,9 @@ button {
 
     #buttons {
         button.key {
-            margin: 2px;
-            background-color: gray;
-
             display: inline-block;
             width: 80px;
             height: 80px;
-            margin: 5px;
             float: right;
 
             &.tall { height: 170px;}
@@ -57,12 +57,9 @@ button {
     button.gun {
         width: 100px;
         height: 50px;
-        margin: 4px;
         padding: 2px;
         display: block;
         float: left;
-
-        background-color: gray;
 
         p { margin: 0; }
     }
