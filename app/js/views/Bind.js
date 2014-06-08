@@ -15,6 +15,10 @@ define([
         tagName: 'div',
         className: 'bind clearfix',
 
+        events: {
+            'click .delete': 'unbind'
+        },
+
         serializeData: function() {
             var data = Marionette.ItemView.prototype.serializeData.apply(this);
             data = _.extend(data, {
@@ -22,6 +26,10 @@ define([
                 price: this.model.getBindingPrice()
             });
             return data;
+        },
+
+        unbind: function unbind() {
+            this.model.destroy();
         }
 
     });
