@@ -3,6 +3,7 @@ define([
     'marionette',
     'app',
     'collections/Binds',
+    'collections/Guns',
     'views/Numpad',
     'views/Guns',
     'views/Staging',
@@ -14,6 +15,7 @@ define([
     Marionette,
     app,
     BindsCollection,
+    GunsCollection,
     NumpadView,
     GunsView,
     StagingView,
@@ -41,7 +43,7 @@ define([
 
         initialize: function(options) {
             app.data.binds = new BindsCollection();
-            app.data.staging = new Backbone.Collection();
+            app.data.staging = new GunsCollection();
             app.data.binds.model = BindModel;
 
             this.numpadView = new NumpadView();
