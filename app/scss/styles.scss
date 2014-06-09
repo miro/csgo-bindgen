@@ -59,6 +59,15 @@ button,
                 &.wide { width: 170px;}
             }
         }
+
+        .customkey {
+            padding: 15px 12px;
+            width: 84px;
+
+            input {
+                width: 60px;
+            }
+        }
     }
 
     .guns-view {
