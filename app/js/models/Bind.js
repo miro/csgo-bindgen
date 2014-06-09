@@ -13,7 +13,7 @@ define([
         },
 
         getBindingString: function getBindingString() {
-            var script = 'bind ' + '"' + this.get('key').get('key') + '" "';
+            var script = 'bind ' + '"' + this.get('key').get('code') + '" "';
             
             _.each(this.get('guns'), function getBuyCommands(gun) {
                 var gunCodes = gun.get('code');
