@@ -36,9 +36,7 @@ define([
         },
 
         events: {
-            'click .bind':      'createBind',
             'click .cfg':       'generateCfg'
-
         },
 
         initialize: function(options) {
@@ -50,6 +48,8 @@ define([
             this.gunsView = new GunsView();
             this.stagingView = new StagingView({collection: app.data.staging});
             this.bindsView = new BindsView({collection: app.data.binds});
+
+            this.listenTo(app.vent, 'bind:create', this.createBind);
         },
 
         onRender: function() {
