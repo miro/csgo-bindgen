@@ -21,6 +21,15 @@ define([
             "click .staging-remove": "unstage"
         },
 
+        serializeData: function() {
+            var data = Marionette.ItemView.prototype.serializeData.apply(this);
+            var price = this.model.get('price');
+            data = _.extend(data, {
+                prices: (price instanceof Array ? price : [price])
+            });
+            return data;
+        },
+
         unstage: function(e) {
             app.data.staging.remove(this.model);
         }

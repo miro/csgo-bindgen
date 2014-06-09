@@ -1,2 +1,9 @@
-<p><%= name %> <span class="price"><%= price %></span></p>
+<p><%= name %></p>
 <button class="staging-remove">X</button>
+<p class="price">
+	&#36;
+	<% for (var i = 0; i < prices.length; ++i) { %>
+		<%= (i > 0 ? ' / ' : '') %>
+		<%= prices[i] %>
+	<% } %>
+</p>
