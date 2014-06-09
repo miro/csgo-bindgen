@@ -30,7 +30,7 @@ require.config({
 require([
 	'backbone',
 	'underscore',
-	'router',
+	'Router',
 	'app'
 ], function(
 	Backbone,
