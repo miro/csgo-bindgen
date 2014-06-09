@@ -1,18 +1,28 @@
 define([
     'underscore',
     'marionette',
-    'text!templates/base.html',
-    'views/Numpad'
+    'app',
+    'collections/Binds',
+    'views/Numpad',
+    'views/Guns',
+    'views/Binds',
+    'models/Bind',
+    'text!templates/base.html'
 ], function(
     _,
     Marionette,
-    template,
-    NumpadView
+    app,
+    BindsCollection,
+    NumpadView,
+    GunsView,
+    BindsView,
+    BindModel,
+    template
     ) {
 
     return Marionette.Layout.extend({
 
-        className: "base-wrap",
+        className: "base-wrap clearfix",
 
         template: _.template(template),
 
@@ -23,16 +33,46 @@ define([
         },
 
         events: {
-            "click .add-button" : "_addClicked"
+            "click .bind" : "createBind"
         },
 
         initialize: function(options) {
-            var numpadView = new NumpadView();
-            this.numpadRegion.show(numpadView);
+            app.data.binds = new BindsCollection();
+            app.data.binds.model = BindModel;
+
+            this.numpadView = new NumpadView();
+            this.gunsView = new GunsView();
+            this.bindsView = new BindsView({collection: app.data.binds});
         },
 
-        onShow: function() {
-            // this.details.show(this.detailsView);
+        onRender: function() {
+            this.numpadRegion.show(this.numpadView);
+            this.gunsRegion.show(this.gunsView);
+            this.bindsRegion.show(this.bindsView);
+        },
+
+        createBind: function() {
+            var selectedKey = this.numpadView.getSelected();
+            var selectedGuns = this.gunsView.getSelected();
+
+            if (!selectedKey || !selectedGuns) {
+                return;
+            }
+
+            if (app.data.binds.isKeyBinded(selectedKey)) {
+                console.log("Key already binded!");
+                return;
+            }
+
+            var bindModel = new BindModel({
+                key: selectedKey,
+                guns: selectedGuns
+            });
+
+            app.data.binds.add(bindModel);
+            app.vent.trigger('bind:created');
+            console.log(bindModel.getBindingString());
+
         }
     });
 });

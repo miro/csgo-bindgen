@@ -1,0 +1,48 @@
+define([
+    'jquery',
+    'underscore',
+    'marionette',
+    'app',
+    'text!templates/key.html'
+], function(
+    $,
+    _,
+    Marionette,
+    app,
+    template
+    ) {
+
+    return Backbone.Marionette.ItemView.extend({
+        template: _.template(template),
+        tagName: 'button',
+        className: function() {
+            var name = 'key';
+            name += (this.model.get('height') ? ' tall' : '');
+            name += (this.model.get('width') ? ' wide' : '');
+            return name;
+        },
+
+        events: {
+            'click':    'select'
+        },
+
+        initialize: function() {
+            this.model.set('isSelected', false);
+            this.listenTo(app.vent, 'key:selected', this.unSelect);
+            this.listenTo(app.vent, 'bind:created', this.unSelect);
+        },
+
+        select: function() {
+            app.vent.trigger('key:selected');
+
+            this.model.set('isSelected', true);
+            $(this.el).addClass('selected');
+        },
+
+        unSelect: function() {
+            this.model.set('isSelected', false);
+            $(this.el).removeClass('selected');
+        }
+
+    });
+});

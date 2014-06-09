@@ -1,2 +1,117 @@
+@import "reset.scss";
+
+* {
+    // Font styles needed here due to Chrome setting weird defaults without these 
+    font-family: "Helvetica Neue", arial, sans-serif;
+    font-size: 1em;
+
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", arial, sans-serif;
+    font-size: 15px;
+}
+
+
+
+// ---------------------------------------
+
+.column {
+    float: left;
+    margin-right: 20px;
+}
+
+button,
+.button {
+    cursor: pointer;
+    background-color: gray;
+    margin: 5px;
+
+    &.selected {
+        background-color: navy !important;
+    }
+}
+
+
+.numpad-view {
+    width: 360px;
+    display: inline-block;
+
+    #buttons {
+        button.key {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            float: right;
+
+            &.tall { height: 170px;}
+            &.wide { width: 170px;}
+        }
+    }
+}
+
+.guns-view {
+    width: 340px;
+
+    button.gun {
+        width: 100px;
+        height: 50px;
+        padding: 2px;
+        display: block;
+        float: left;
+
+        p { margin: 0; }
+    }
+}
+
+
+.binds-view {
+    width: 300px;
+
+    div.bind {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 2px;
+        background-color: gray;
+        overflow: auto;
+
+        .key {
+            float: left;
+            height: 100%;
+            width: 50px;
+            padding: 4px;
+            background-color: white;
+        }
+
+        .guns-list {
+            float: left;
+            height: 100%;
+            display: block;
+        }
+    }
+}
+
+
+
+
+
+
+
+/*
+    CLEARFIX HACK
+    (http://nicolasgallagher.com/micro-clearfix-hack/)
+*/
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
 
 

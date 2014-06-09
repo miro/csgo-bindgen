@@ -7,7 +7,8 @@ require.config({
         jquery: '../bower_components/jquery/dist/jquery',
         text: '../bower_components/requirejs-text/text',
         moment: '../bower_components/moment/moment',
-        templates: '../templates'
+        templates: '../templates',
+        data: '../data'
     },
 
     shim: {

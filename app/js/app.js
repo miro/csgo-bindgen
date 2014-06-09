@@ -13,6 +13,8 @@ define([
         mainRegion: '#root'
     });
 
+    application.data = {};
+
 
     return application;
 });
