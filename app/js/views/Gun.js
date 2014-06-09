@@ -22,7 +22,7 @@ define([
         },
 
         onClick: function(e) {
-            app.data.staging.add(this.model);
+            app.data.staging.add(this.model.clone());
         }
     });
 });
