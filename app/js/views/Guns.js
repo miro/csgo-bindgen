@@ -18,6 +18,8 @@ define([
         itemView: GunView,
         itemViewContainer: '#guns',
 
+        lastGunClass: null, // In here we store the last seen gun class of our models (horrible comment arg idk)
+
         initialize: function() {
             this.collection = new Backbone.Collection(_.flatten(JSON.parse(gunsJSON)));
         },
@@ -27,6 +29,24 @@ define([
                 return model.get('isSelected');
             });
             return selectedModels;
-        }
+        },
+
+        buildItemView: function(model, ItemViewType, itemViewOptions) {
+            var subheaderText = null;
+            if (this.lastGunClass != model.get('class')) {
+                subheaderText = model.get('class');
+            }
+            this.lastGunClass = model.get('class');
+
+            var options = _.extend({
+                    model: model,
+                    subheaderText: subheaderText
+                },
+                itemViewOptions
+            );
+
+            var view = new GunView(options);
+            return view;
+        },
     });
 });

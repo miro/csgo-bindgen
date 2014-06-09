@@ -59,6 +59,14 @@ button,
 
         li.gun {
             padding: 2px;
+
+            &.classFirst {
+                margin-top: 20px;
+            }
+
+            &:first-child {
+                margin-top: 5px;
+            }
         }
     }
 
@@ -117,6 +125,10 @@ button,
 
 .clearfix:after {
     clear: both;
+}
+
+.hidden {
+    display: none;
 }
 
 
