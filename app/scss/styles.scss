@@ -74,6 +74,18 @@ button,
         width: 280px;
         min-height: 10px;
         display: block;
+
+        li {
+            vertical-align: middle;
+
+            p {
+                margin: 10px;
+                float: left;
+            }
+            button {
+                float: right;
+            }
+        }
     }
 }
 

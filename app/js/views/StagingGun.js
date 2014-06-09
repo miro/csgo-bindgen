@@ -15,7 +15,7 @@ define([
     return Backbone.Marionette.ItemView.extend({
         template: _.template(template),
         tagName: 'li',
-        className: 'gun',
+        className: 'gun clearfix',
 
         events: {
             "click .staging-remove": "unstage"
