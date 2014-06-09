@@ -14,7 +14,7 @@ define([
 
     return Backbone.Marionette.ItemView.extend({
         template: _.template(template),
-        tagName: 'button',
+        tagName: 'li',
         className: 'gun',
 
         events: {
