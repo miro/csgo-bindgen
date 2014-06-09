@@ -5,6 +5,7 @@ define([
     'collections/Binds',
     'views/Numpad',
     'views/Guns',
+    'views/Staging',
     'views/Binds',
     'models/Bind',
     'text!templates/base.html'
@@ -15,6 +16,7 @@ define([
     BindsCollection,
     NumpadView,
     GunsView,
+    StagingView,
     BindsView,
     BindModel,
     template
@@ -29,6 +31,7 @@ define([
         regions: {
             numpadRegion: '#numpad-wrap',
             gunsRegion: '#guns-wrap',
+            stagingRegion: '#staging-wrap',
             bindsRegion: '#binds-wrap'
         },
 
@@ -38,22 +41,25 @@ define([
 
         initialize: function(options) {
             app.data.binds = new BindsCollection();
+            app.data.staging = new Backbone.Collection();
             app.data.binds.model = BindModel;
 
             this.numpadView = new NumpadView();
             this.gunsView = new GunsView();
+            this.stagingView = new StagingView({collection: app.data.staging});
             this.bindsView = new BindsView({collection: app.data.binds});
         },
 
         onRender: function() {
             this.numpadRegion.show(this.numpadView);
             this.gunsRegion.show(this.gunsView);
+            this.stagingRegion.show(this.stagingView);
             this.bindsRegion.show(this.bindsView);
         },
 
         createBind: function() {
             var selectedKey = this.numpadView.getSelected();
-            var selectedGuns = this.gunsView.getSelected();
+            var selectedGuns = app.data.staging.models;
 
             if (!selectedKey || !selectedGuns) {
                 return;
@@ -70,6 +76,7 @@ define([
             });
 
             app.data.binds.add(bindModel);
+            app.data.staging.reset([]);
             app.vent.trigger('bind:created');
             console.log(bindModel.getBindingString());
 

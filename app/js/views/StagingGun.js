@@ -3,7 +3,7 @@ define([
     'underscore',
     'marionette',
     'app',
-    'text!templates/gun.html'
+    'text!templates/staginggun.html'
 ], function(
     $,
     _,
@@ -18,11 +18,11 @@ define([
         className: 'gun',
 
         events: {
-            "click": "onClick"
+            "click .staging-remove": "unstage"
         },
 
-        onClick: function(e) {
-            app.data.staging.add(this.model);
+        unstage: function(e) {
+            app.data.staging.remove(this.model);
         }
     });
 });
