@@ -36,7 +36,9 @@ define([
         },
 
         events: {
-            "click .bind" : "createBind"
+            'click .bind':      'createBind',
+            'click .cfg':       'generateCfg'
+
         },
 
         initialize: function(options) {
@@ -80,6 +82,15 @@ define([
             app.vent.trigger('bind:created');
             console.log(bindModel.getBindingString());
 
+        },
+
+        generateCfg: function generateCfg() {
+            var scripts = "";
+            _.each(app.data.binds.models, function(bindModel) {
+                scripts += bindModel.getBindingString() + '\n';
+            });
+
+            window.prompt("Copy Buyscripts to clipboard: press Ctrl+C, Enter", scripts);
         }
     });
 });
