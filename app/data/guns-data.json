@@ -2,27 +2,34 @@
     {
         "name": "P2000/Glock-18",
         "code": ["hkp2000", "glock"],
-        "price": [200, 200]
+        "price": [200, 200],
+        "class": "pistol"
     },
     {
         "name": "P250",
         "code": "p250",
-        "price": 300
+        "price": 300,
+        "class": "pistol"
     },
     {
         "name": "Desert Eagle",
         "code": "deagle",
-        "price": 650
+        "price": 650,
+        "class": "pistol"
     },
     {
         "name": "Dual Berettas",
         "code": "elite",
-        "price": 700
+        "price": 700,
+        "class": "pistol"
+
+
     },
     {
         "name": "Five-SeveN/Tec-9",
         "code": ["fiveseven", "tec9"],
-        "price": [500, 500]
+        "price": [500, 500],
+        "class": "pistol"
     },
 
 
@@ -30,17 +37,21 @@
     {
         "name": "Nova",
         "code": "nova",
-        "price": 1200
+        "price": 1200,
+        "class": "shotgun"
+
     },
     {
         "name": "XM1014",
         "code": "xm1014",
-        "price": 2200
+        "price": 2200,
+        "class": "shotgun"
     },
     {
         "name": "MAG-7/Saved-Off",
         "code": ["mag7", "sawedoff"],
-        "price": [1200, 1800]
+        "price": [1200, 1800],
+        "class": "shotgun"
     },
 
 
@@ -48,27 +59,32 @@
     {
         "name": "MP9/MAC-10",
         "code": ["mp9", "mac10"],
-        "price": [1250, 1050]
+        "price": [1250, 1050],
+        "class": "smg"
     },
     {
         "name": "MP7",
         "code": "mp7",
-        "price": 1700
+        "price": 1700,
+        "class": "smg"
     },
     {
         "name": "UMP-45",
         "code": "ump45",
-        "price": 1200
+        "price": 1200,
+        "class": "smg"
     },
     {
         "name": "PP-Bizon",
         "code": "bizon",
-        "price": 1400
+        "price": 1400,
+        "class": "smg"
     },
     {
         "name": "P90",
         "code": "p90",
-        "price": 2350
+        "price": 2350,
+        "class": "smg"
     },
 
 
@@ -76,32 +92,38 @@
     {
         "name": "FAMAS/Galil",
         "code": ["famas", "galilar"],
-        "price": [2250, 2000]
+        "price": [2250, 2000],
+        "class": "rifle"
     },
     {
         "name": "M4A4/AK-47",
         "code": ["m4a4", "ak47"],
-        "price": [3100, 2700]
+        "price": [3100, 2700],
+        "class": "rifle"
     },
     {
         "name": "SSG 08 (Scout)",
         "code": "scout",
-        "price": 2750
+        "price": 2750,
+        "class": "sniper"
     },
     {
         "name": "AUG/SG 553",
         "code": ["aug", "sg550"],
-        "price": [3300, 3000]
+        "price": [3300, 3000],
+        "class": "sniper"
     },
     {
         "name": "AWP",
         "code": "awp",
-        "price": 4750
+        "price": 4750,
+        "class": "sniper"
     },
     {
         "name": "SCAR-20/G3SG1",
         "code": ["scar20", "g3sg1"],
-        "price": [5000, 5000]
+        "price": [5000, 5000],
+        "class": "sniper"
     },
 
 
@@ -109,12 +131,14 @@
     {
         "name": "M249",
         "code": "m249",
-        "price": 5200
+        "price": 5200,
+        "class": "mg"
     },
     {
         "name": "Negev",
         "code": "negev",
-        "price": 5700
+        "price": 5700,
+        "class": "mg"
     },
 
 
@@ -122,27 +146,32 @@
     {
         "name": "Incendiary/Molotov",
         "code": ["incgrenade", "molotov"],
-        "price": [850, 500]
+        "price": [850, 500],
+        "class": "grenade"
     },
     {
         "name": "Decoy grenade",
         "code": "decoy",
-        "price": 50
+        "price": 50,
+        "class": "grenade"
     },
     {
         "name": "HE grenade",
         "code": "hegrenade",
-        "price": 300
+        "price": 300,
+        "class": "grenade"
     },
     {
         "name": "Flashbang",
         "code": "flashbang",
-        "price": 200
+        "price": 200,
+        "class": "grenade"
     },
     {
         "name": "Smoke grenade",
         "code": "smokegrenade",
-        "price": 300
+        "price": 300,
+        "class": "grenade"
     },
 
 
@@ -150,21 +179,25 @@
     {
         "name": "Kevlar+helmet",
         "code": "vesthelm",
-        "price": 1000 
+        "price": 1000,
+        "class": "equipment"
     },
     {
         "name": "Kevlar",
         "code": "kevlar",
-        "price": 650
+        "price": 650,
+        "class": "equipment"
     },
     {
         "name": "Defuse Kit",
         "code": "defuser",
-        "price": 400
+        "price": 400,
+        "class": "equipment"
     },
     {
         "name": "Zeus x27",
         "code": "taser",
-        "price": 1000
+        "price": 1000,
+        "class": "equipment"
     }
 ]
