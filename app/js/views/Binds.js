@@ -2,12 +2,14 @@ define([
     'jquery',
     'underscore',
     'marionette',
+    'app',
     'views/Bind',
     'text!templates/binds.html'
 ], function(
     $,
     _,
     Marionette,
+    app,
     BindView,
     template
     ) {
@@ -23,6 +25,19 @@ define([
         className: 'binds-view',
         itemView: BindView,
         itemViewContainer: '#binds',
-        emptyView: NoItemsView
+        emptyView: NoItemsView,
+
+        events: {
+            "click #generate": "generateCfg"
+        },
+
+        generateCfg: function generateCfg() {
+            var scripts = "";
+            _.each(app.data.binds.models, function(bindModel) {
+                scripts += bindModel.getBindingString() + '\n';
+            });
+
+            window.prompt("Copy Buyscripts to clipboard: press Ctrl+C, Enter", scripts);
+        }
     });
 });

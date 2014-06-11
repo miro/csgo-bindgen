@@ -112,6 +112,10 @@ hr {
     border: 1px solid black;
 }
 
+p {
+    margin: 5px;
+}
+
 // ----------------------------------------
 
 .base-wrap {
@@ -223,7 +227,7 @@ hr {
         div.bind {
             display: block;
             width: 100%;
-            margin: 5px;
+            margin-bottom: 5px;
             padding: 4px 2px;
             
             overflow: auto;
