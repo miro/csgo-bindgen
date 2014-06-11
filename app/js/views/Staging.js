@@ -17,10 +17,18 @@ define([
     // This view is used to "stage" binding
     // User selects weapons to the staging area, and after pressing "bind",
     // weapons from staging area comes to the actual binding
+
+    NoItemsView = Backbone.Marionette.ItemView.extend({
+        template: _.template('No selected Guns'),
+        tagName: 'li',
+        className: 'gun clearfix'
+    });
+
     return Backbone.Marionette.CompositeView.extend({
         template: _.template(template),
         className: 'staging-view',
         itemView: StagingGun,
+        emptyView: NoItemsView,
         itemViewContainer: '#staging',
 
         events: {
