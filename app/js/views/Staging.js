@@ -46,7 +46,11 @@ define([
 
             var totalPrices = this.collection.getPrices();
             var formattedTotalPrices = "= $" + totalPrices[0];
-            if (totalPrices[0] !== totalPrices[1]) {
+
+            if (totalPrices[0] === 0) {
+                formattedTotalPrices = "";
+            }
+            else if (totalPrices[0] !== totalPrices[1]) {
                 formattedTotalPrices += " / " + totalPrices[1];
             }
             $(this.el).find('#totalprice').text(formattedTotalPrices);
