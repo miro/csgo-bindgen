@@ -55,13 +55,14 @@ $lighter-blue: #8DC4D9;
     float: left;
     margin-right: 20px;
     background-color: rgba(123, 66, 4, 0.4); // $brown;
+    padding-bottom: 15px;
 }
 
 button,
 .button {
     cursor: pointer;
     color: $white;
-    background-color: $dark-blue;
+    background-color: $deepest-blue;
     margin: 5px;
     border: 0;
 
@@ -107,14 +108,13 @@ h2 {
 
 hr {
     width: 90%;
-    margin: 5px auto;
+    margin: 20px auto;
     border: 1px solid black;
 }
 
 // ----------------------------------------
 
 .base-wrap {
-    border: 1px solid black;
     width: 1180px;
     margin: 0 auto;
 
@@ -140,11 +140,13 @@ hr {
         }
 
         .customkey {
-            padding: 15px 12px;
-            width: 84px;
+            margin: 2px 10px;
+            padding: 15px 10px;
+            width: 130px;
+            float: right;
 
             input {
-                width: 60px;
+                width: 110px;
             }
         }
     }
@@ -216,21 +218,32 @@ hr {
     }
 
     .binds-view {
-        width: 280px;
+        width: 290px;
 
         div.bind {
             display: block;
             width: 100%;
-            margin-bottom: 5px;
-            padding: 2px;
-            background-color: gray;
+            margin: 5px;
+            padding: 4px 2px;
+            
             overflow: auto;
+            position: relative;
+
+            background-color: $dark-blue;
+            &.none {
+                background-color: inherit;
+            }
+
+            border-bottom: 2px solid $brown;
+            &:only-child, &:last-child {
+                border: 0;
+            }
 
             .key {
                 float: left;
                 height: 40px;
                 width: 40px;
-                margin: 0 4px;
+                margin: 2px 4px;
 
                 line-height:40px;
                 vertical-align: middle;
@@ -256,8 +269,17 @@ hr {
                 display: block;
             }
 
+            .price {
+                position: absolute;
+                top: 14px;
+                right: 33px;
+                font-size: 12px;
+            }
+
             .delete {
-                float: right;
+                position: absolute;
+                top: 4px;
+                right: 2px;
             }
         }
     }

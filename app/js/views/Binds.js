@@ -13,9 +13,9 @@ define([
     ) {
 
     NoItemsView = Backbone.Marionette.ItemView.extend({
-        template: _.template('No Binds'),
+        template: _.template('<p>No Binds</p>'),
         tagName: 'div',
-        className: 'bind clearfix'
+        className: 'bind clearfix none'
     });
 
     return Backbone.Marionette.CompositeView.extend({

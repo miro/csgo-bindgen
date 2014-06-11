@@ -7,10 +7,6 @@ define([
     ) {
 
     return Backbone.Model.extend({
-        
-        initialize: function() {
-            console.log("Bind Model initialize");
-        },
 
         getBindingString: function getBindingString() {
             var script = 'bind ' + '"' + this.get('key').get('code') + '" "';

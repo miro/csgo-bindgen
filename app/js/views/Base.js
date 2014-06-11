@@ -70,12 +70,17 @@ define([
             var selectedKey = this.numpadView.getSelected();
             var selectedGuns = app.data.staging.models;
 
-            if (!selectedKey || !selectedGuns) {
+            if (!selectedKey) {
+                alert("Select a Key!");
+                return;
+            }
+            if (!selectedGuns || selectedGuns.length === 0) {
+                alert("Select at least one Gun!");
                 return;
             }
 
             if (app.data.binds.isKeyBinded(selectedKey)) {
-                console.log("Key already binded!");
+                alert("Key already binded!");
                 return;
             }
 
