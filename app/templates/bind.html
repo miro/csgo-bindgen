@@ -5,6 +5,10 @@
 	<% }); %>
 </div>
 <div class="price">
-	<%= price.ctPrice != price.tPrice ? (price.ctPrice + " / " + price.tPrice) : price.ctPrice %>
+	<p>
+		<%= price.ctPrice != price.tPrice ? 
+			("&#36;" + price.ctPrice + " / " + price.tPrice) 
+			: ("&#36;" + price.ctPrice) %>
+	</p>
 </div>
 <button class="delete action">X</button>
