@@ -2,12 +2,14 @@ define([
     'jquery',
     'underscore',
     'marionette',
-    'views/Bind'
+    'views/Bind',
+    'text!templates/binds.html'
 ], function(
     $,
     _,
     Marionette,
-    BindView
+    BindView,
+    template
     ) {
 
     NoItemsView = Backbone.Marionette.ItemView.extend({
@@ -16,8 +18,8 @@ define([
         className: 'bind clearfix'
     });
 
-    return Backbone.Marionette.CollectionView.extend({
-        template: _.template('<div id="binds"></div>'),
+    return Backbone.Marionette.CompositeView.extend({
+        template: _.template(template),
         className: 'binds-view',
         itemView: BindView,
         itemViewContainer: '#binds',

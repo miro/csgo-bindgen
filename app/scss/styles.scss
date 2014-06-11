@@ -18,14 +18,34 @@ html {
     background-size: cover;
 }
 // ---------------------------------------
+// de_dust palette
 $light-blue: #D4FFFF;
 $yellow: #F6D27A;
 $brown: #5D4834;
 $dark-brown: #4E2519;
 $white: #FFF;
 
+// csgo background: 
+$red-dark: #DA5A14;
+$orange: #D86918;
+$light: #F1D2A1;
+$black: #2A3742;
+$white: #F1EDDA;
 
+// http://colorschemedesigner.com/#0B21TsOsOFfFf with different contrast
+// Primary
+$orange: #E68217;
+$light-brown: #9A6D3D;
+$brown: #7B4204;
+$light-orange: #F6AF62;
+$lighter-orange: #F6CB9C;
 
+// Complementary
+$deep-blue: #146E90;
+$dark-blue: #295161;
+$deepest-blue: #04394D;
+$light-blue: #5CB7D9;
+$lighter-blue: #8DC4D9;
 
 
 // ---------------------------------------
@@ -34,34 +54,85 @@ $white: #FFF;
     height: 100%;
     float: left;
     margin-right: 20px;
-    background-color: rgba(93,72,52,0.8); // $brown;
+    background-color: rgba(123, 66, 4, 0.4); // $brown;
 }
 
 button,
 .button {
     cursor: pointer;
-    background-color: gray;
+    color: $white;
+    background-color: $dark-blue;
     margin: 5px;
+    border: 0;
 
     &.selected {
-        background-color: navy !important;
+        background-color: $light-orange !important;
+    }
+
+    &:hover {
+        background-color: $light-orange;
+    }
+    transition: background-color 200ms linear;
+
+    &.action {
+        background-color: $orange;
+    }
+
+    &.big {
+        padding: 15px;
+        font-size: 18px;
+        margin: 5px auto;
+        display: block;
+
+        &:hover {
+            background-color: $light-orange;
+        }
     }
 }
 
-.keygun-wrap {
+h2 {
+    // these are the column titles
+    display: block;
+    text-align: center;
+    width: 100%;
+    
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+
+    background-color: $orange;    
+
+    padding: 5px;
+}
+
+hr {
+    width: 90%;
+    margin: 5px auto;
     border: 1px solid black;
-    width: 1200px;
+}
+
+// ----------------------------------------
+
+.base-wrap {
+    border: 1px solid black;
+    width: 1180px;
+    margin: 0 auto;
+
+    color: $white;
 
     .numpad-view {
-        width: 280px;
         display: inline-block;
 
         #buttons {
+            width: 280px;
+            margin: 5px;
+
             button.key {
                 display: inline-block;
                 width: 60px;
                 height: 60px;
                 float: right;
+                color: $white;
 
                 &.tall { height: 130px;}
                 &.wide { width: 130px;}
@@ -80,6 +151,10 @@ button,
 
     .guns-view {
         width: 200px;
+
+        ul {
+            margin: 5px;
+        }
 
         li.gun {
             font-size: 14px;
@@ -102,6 +177,19 @@ button,
         li {
             vertical-align: middle;
             font-size: 16px;
+            background-color: $light-orange;
+            
+            border-bottom: 1px solid $orange;
+            §:only-child, &:last-child {
+                border-bottom: 2px solid $deep-blue;
+            }
+            &:only-child {
+                border: 0;
+            }
+
+            &.none {
+                background-color: inherit;
+            }
 
             p {
                 margin: 10px;
@@ -116,10 +204,19 @@ button,
                 float: right;
             }
         }
+
+        .info {
+            margin: 5px;
+            text-align: right;
+
+            #totalprice {
+                font-weight: bold;
+            }
+        }
     }
 
     .binds-view {
-        width: 250px;
+        width: 280px;
 
         div.bind {
             display: block;
@@ -131,10 +228,26 @@ button,
 
             .key {
                 float: left;
-                height: 100%;
-                width: 50px;
-                padding: 4px;
-                background-color: white;
+                height: 40px;
+                width: 40px;
+                margin: 0 4px;
+
+                line-height:40px;
+                vertical-align: middle;
+                text-align:center;
+
+                box-shadow:inset 0px 1px 0px 0px #ffffff;
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+                background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+                background-color:#ededed;
+                border-radius: 6px;
+                border:1px solid #dcdcdc;
+                display:inline-block;
+                color:#777777;
+
+                font-size: 18px;
+                font-weight:bold;
+                text-shadow:1px 1px 0px #ffffff;
             }
 
             .guns-list {
@@ -142,7 +255,15 @@ button,
                 height: 100%;
                 display: block;
             }
+
+            .delete {
+                float: right;
+            }
         }
+    }
+
+    .controls-view {
+        margin-top: 20px;
     }
 }
 

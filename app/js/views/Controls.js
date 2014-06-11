@@ -14,7 +14,7 @@ define([
 
     return Backbone.Marionette.ItemView.extend({
         template: _.template(template),
-        className: 'staging-view',
+        className: 'controls-view',
 
         events: {
             "click #generate": "generateCfg"

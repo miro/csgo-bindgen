@@ -57,7 +57,7 @@
     
 
     {
-        "key": "Enter",
+        "key": "&crarr;",
         "code": "kp_enter",
         "height": 2
     },

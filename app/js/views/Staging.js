@@ -19,9 +19,9 @@ define([
     // weapons from staging area comes to the actual binding
 
     NoItemsView = Backbone.Marionette.ItemView.extend({
-        template: _.template('No selected Guns'),
+        template: _.template('<p>No selected Guns</p>'),
         tagName: 'li',
-        className: 'gun clearfix'
+        className: 'gun clearfix none'
     });
 
     return Backbone.Marionette.CompositeView.extend({
@@ -45,7 +45,7 @@ define([
             // Didn't want to battle with Marionette (https://github.com/marionettejs/backbone.marionette/issues/640)
 
             var totalPrices = this.collection.getPrices();
-            var formattedTotalPrices = "$" + totalPrices[0];
+            var formattedTotalPrices = "= $" + totalPrices[0];
             if (totalPrices[0] !== totalPrices[1]) {
                 formattedTotalPrices += " / " + totalPrices[1];
             }
