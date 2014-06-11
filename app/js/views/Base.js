@@ -7,6 +7,7 @@ define([
     'views/Numpad',
     'views/Guns',
     'views/Staging',
+    'views/Controls',
     'views/Binds',
     'models/Bind',
     'text!templates/base.html'
@@ -19,6 +20,7 @@ define([
     NumpadView,
     GunsView,
     StagingView,
+    ControlsView,
     BindsView,
     BindModel,
     template
@@ -34,7 +36,8 @@ define([
             numpadRegion: '#numpad-wrap',
             gunsRegion: '#guns-wrap',
             stagingRegion: '#staging-wrap',
-            bindsRegion: '#binds-wrap'
+            bindsRegion: '#binds-wrap',
+            controlsRegion: '#controls-wrap'
         },
 
         events: {
@@ -50,6 +53,7 @@ define([
             this.gunsView = new GunsView();
             this.stagingView = new StagingView({collection: app.data.staging});
             this.bindsView = new BindsView({collection: app.data.binds});
+            this.controlsView = new ControlsView();
 
             this.listenTo(app.vent, 'bind:create', this.createBind);
         },
@@ -59,6 +63,7 @@ define([
             this.gunsRegion.show(this.gunsView);
             this.stagingRegion.show(this.stagingView);
             this.bindsRegion.show(this.bindsView);
+            this.controlsRegion.show(this.controlsView);
         },
 
         createBind: function() {
@@ -84,15 +89,8 @@ define([
             app.vent.trigger('bind:created');
             console.log(bindModel.getBindingString());
 
-        },
-
-        generateCfg: function generateCfg() {
-            var scripts = "";
-            _.each(app.data.binds.models, function(bindModel) {
-                scripts += bindModel.getBindingString() + '\n';
-            });
-
-            window.prompt("Copy Buyscripts to clipboard: press Ctrl+C, Enter", scripts);
         }
+
+        
     });
 });

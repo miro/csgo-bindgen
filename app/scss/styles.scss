@@ -27,11 +27,14 @@ $white: #FFF;
 
 
 
+
 // ---------------------------------------
 
 .column {
+    height: 100%;
     float: left;
     margin-right: 20px;
+    background-color: rgba(93,72,52,0.8); // $brown;
 }
 
 button,
@@ -47,21 +50,21 @@ button,
 
 .keygun-wrap {
     border: 1px solid black;
-    width: 960px;
+    width: 1200px;
 
     .numpad-view {
-        width: 360px;
+        width: 280px;
         display: inline-block;
 
         #buttons {
             button.key {
                 display: inline-block;
-                width: 80px;
-                height: 80px;
+                width: 60px;
+                height: 60px;
                 float: right;
 
-                &.tall { height: 170px;}
-                &.wide { width: 170px;}
+                &.tall { height: 130px;}
+                &.wide { width: 130px;}
             }
         }
 
@@ -95,7 +98,6 @@ button,
     .staging-view {
         width: 320px;
         min-height: 10px;
-        display: block;
 
         li {
             vertical-align: middle;
@@ -115,36 +117,38 @@ button,
             }
         }
     }
-}
 
+    .binds-view {
+        width: 250px;
 
-
-.binds-view {
-    width: 300px;
-
-    div.bind {
-        display: block;
-        width: 100%;
-        margin-bottom: 5px;
-        padding: 2px;
-        background-color: gray;
-        overflow: auto;
-
-        .key {
-            float: left;
-            height: 100%;
-            width: 50px;
-            padding: 4px;
-            background-color: white;
-        }
-
-        .guns-list {
-            float: left;
-            height: 100%;
+        div.bind {
             display: block;
+            width: 100%;
+            margin-bottom: 5px;
+            padding: 2px;
+            background-color: gray;
+            overflow: auto;
+
+            .key {
+                float: left;
+                height: 100%;
+                width: 50px;
+                padding: 4px;
+                background-color: white;
+            }
+
+            .guns-list {
+                float: left;
+                height: 100%;
+                display: block;
+            }
         }
     }
 }
+
+
+
+
 
 
 
