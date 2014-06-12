@@ -26,7 +26,8 @@ define([
 
         initialize: function(options) {
             this.subheaderText = options.subheaderText;
-            this.listenTo(app.vent, 'lastgun:unstaged', this.unselect);
+            this.listenTo(app.vent, 'lastgun:unstaged', this.itemUnstaged);
+            this.listenTo(app.vent, 'bind:created', this.unselect);
         },
 
         onRender: function() {
@@ -48,10 +49,14 @@ define([
             app.data.staging.add(this.model.clone());
         },
 
-        unselect: function(unstagedGun) {
+        itemUnstaged: function(unstagedGun) {
             if (this.model.get('name') === unstagedGun.get('name')) {
-                $(this.el).removeClass('selected');
+                this.unselect();
             }
+        },
+
+        unselect: function() {
+            $(this.el).removeClass('selected');
         }
     });
 });
