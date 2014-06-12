@@ -1,9 +1,11 @@
 define([
     'underscore',
-    'marionette'
+    'marionette',
+    'app'
 ], function(
     _,
-    Marionette
+    Marionette,
+    app
     ) {
 
     return Backbone.Collection.extend({
@@ -27,6 +29,18 @@ define([
                 }
             });
             return sums;
+        },
+
+        unstage: function(removedGun) {
+            this.remove(removedGun);
+
+            var remaining = _.filter(this.models, function(model) {
+                return removedGun.get('name') === model.get('name');
+            });
+
+            if (remaining.length === 0) {
+                app.vent.trigger('lastgun:unstaged', removedGun);
+            }
         }
 
 

@@ -31,7 +31,7 @@ define([
         },
 
         unstage: function(e) {
-            app.data.staging.remove(this.model);
+            app.data.staging.unstage(this.model);
         }
     });
 });

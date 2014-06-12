@@ -26,6 +26,7 @@ define([
 
         initialize: function(options) {
             this.subheaderText = options.subheaderText;
+            this.listenTo(app.vent, 'lastgun:unstaged', this.unselect);
         },
 
         onRender: function() {
@@ -43,7 +44,14 @@ define([
         },
 
         onClick: function(e) {
+            $(this.el).addClass('selected');
             app.data.staging.add(this.model.clone());
+        },
+
+        unselect: function(unstagedGun) {
+            if (this.model.get('name') === unstagedGun.get('name')) {
+                $(this.el).removeClass('selected');
+            }
         }
     });
 });
