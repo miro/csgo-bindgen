@@ -13,6 +13,8 @@ define([
         getPrices: function() {
             // NOTE: this could also be a function of StagingGunsCollection.. if we had such thing
             var sums = [0, 0];
+            var kevlar = false;
+            var kevHelm = false;
 
             // Gather CT & T prices
             _.each(this.models, function(gunModel) {
@@ -27,7 +29,22 @@ define([
                         sums[i] += price;
                     }
                 }
+
+                if (gunModel.get('code') === 'kevlar') {
+                    kevlar = true;
+                }
+                if (gunModel.get('code') === 'vesthelm') {
+                    kevHelm = true;
+                }
             });
+
+            // Check for special case - if there are both kevlar and kevlar&helm,
+            // ignore the first from the sum
+            if (kevlar && kevHelm) {
+                var kevlarPrice = _.find(this.models, function(model) { return model.get('code') === 'kevlar';}).get('price');
+                sums[0] -= kevlarPrice;
+                sums[1] -= kevlarPrice;
+            }
             return sums;
         },
 
