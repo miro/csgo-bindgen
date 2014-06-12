@@ -225,6 +225,10 @@ p {
     .binds-view {
         width: 290px;
 
+        h2, button { 
+            background-color: $light-brown;
+        }
+
         div.bind {
             display: block;
             width: 100%;
