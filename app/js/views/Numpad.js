@@ -22,7 +22,7 @@ define([
 
         events: {
             'input #customkey': '_selectCustomKey',
-            'click #buttons button': 'onButtonClick'
+            'click button.key': 'onButtonClick'
         },
 
         initialize: function() {
