@@ -2,23 +2,18 @@ define([
     'underscore',
     'marionette',
     'app',
-    'text!templates/numpad.html',
-    'views/Key',
-    'text!data/keys-data.json'
+    'text!templates/numpad.html'
 ], function(
     _,
     Marionette,
     app,
-    template,
-    KeyView,
-    keysJSON
+    template
     ) {
 
-    return Backbone.Marionette.CompositeView.extend({
+    return Backbone.Marionette.ItemView.extend({
         template: _.template(template),
         className: 'numpad-view',
-        itemView: KeyView,
-        itemViewContainer: '#buttons',
+        selectedKeyObject: {}, // Here gets stored the currently selected keycode
 
         ui: {
             customKeyBtn:      'div.customkey',
@@ -26,14 +21,22 @@ define([
         },
 
         events: {
-            'input #customkey': '_selectCustomKey'
+            'input #customkey': '_selectCustomKey',
+            'click #buttons button': 'onButtonClick'
         },
 
         initialize: function() {
-            this.collection = new Backbone.Collection(_.flatten(JSON.parse(keysJSON)));
+            this.listenTo(app.vent, 'key:selected', this.unSelect);
+            this.listenTo(app.vent, 'bind:created', this.unSelect);
+        },
 
-            this.listenTo(app.vent, 'key:selected', this.unSelectCustomKey);
-            this.listenTo(app.vent, 'bind:created', this.unSelectCustomKey);
+        onButtonClick: function(event) {
+            app.vent.trigger('key:selected');
+            $(event.target).addClass('selected');
+            this.selectedKeyObject = {
+                code: $(event.target).data('key'),
+                key: $(event.target).text()
+            };
         },
 
         getSelected: function() {
@@ -49,16 +52,14 @@ define([
             }
             else {
                 // No custom key inputted - look from the numpad keys
-                var selectedModels =  _.filter(this.collection.models, function filterUnSelected(model) {
-                    return model.get('isSelected');
-                });
-                return selectedModels[0];
+                return new Backbone.Model(this.selectedKeyObject);
             }
         },
 
-        unSelectCustomKey: function() {
+        unSelect: function() {
             this.ui.customKeyBtn.removeClass('selected');
             this.ui.customKeyInput.val('');
+            this.$el.find('button').removeClass('selected');
         },
 
         _selectCustomKey: function() {
