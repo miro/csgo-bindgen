@@ -30,6 +30,13 @@ define([
 
         unbind: function unbind() {
             this.model.destroy();
+        },
+
+        onRender: function(){
+            this.$el.hide();
+        },
+        onShow: function(){
+            this.$el.slideDown(400);
         }
 
     });
