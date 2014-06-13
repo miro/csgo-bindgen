@@ -32,6 +32,13 @@ define([
 
         unstage: function(e) {
             app.data.staging.unstage(this.model);
+        },
+
+        onRender: function(){
+            this.$el.hide();
+        },
+        onShow: function(){
+            this.$el.slideDown(400);
         }
     });
 });
