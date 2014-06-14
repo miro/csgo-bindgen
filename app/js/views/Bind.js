@@ -29,7 +29,13 @@ define([
         },
 
         unbind: function unbind() {
-            this.model.destroy();
+            var self = this;
+            this.$el.fadeOut({
+                duration: 400,
+                done: function() {
+                    self.model.destroy();
+                }
+            })
         },
 
         onRender: function(){

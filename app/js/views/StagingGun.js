@@ -31,7 +31,14 @@ define([
         },
 
         unstage: function(e) {
-            app.data.staging.unstage(this.model);
+            var self = this;
+            this.$el.fadeOut({
+                duration: 400,
+                done: function() {
+                    app.data.staging.unstage(self.model);
+                }
+            });
+            
         },
 
         onRender: function(){
