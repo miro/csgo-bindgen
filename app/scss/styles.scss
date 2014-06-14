@@ -262,7 +262,7 @@ p {
             overflow: auto;
             position: relative;
 
-            background-color: $dark-blue;
+            // background-color: $;
             &.none {
                 background-color: inherit;
             }
@@ -294,6 +294,12 @@ p {
                 font-size: 18px;
                 font-weight:bold;
                 text-shadow:1px 1px 0px #ffffff;
+
+                &.long {
+                    font-size: 10px;
+                    line-height: 10px;
+                    padding-top: 6px;
+                }
             }
 
             .guns-list {

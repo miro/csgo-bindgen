@@ -1,4 +1,6 @@
-<div class="key"><%= key.get('key') %></div>
+<div class="key<%= key.length > 1 ? ' long' : '' %>">
+	<%= key %>
+</div>
 <div class="guns-list">
 	<% _.each(guns, function(gun) { %>
 		<p><%= gun.get('name') %></p>
