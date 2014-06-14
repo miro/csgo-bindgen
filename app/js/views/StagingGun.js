@@ -33,7 +33,7 @@ define([
         unstage: function(e) {
             var self = this;
             this.$el.fadeOut({
-                duration: 400,
+                duration: 200,
                 done: function() {
                     app.data.staging.unstage(self.model);
                 }
