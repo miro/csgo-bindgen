@@ -16,14 +16,20 @@ define([
 
         routes: {
             // Backbone requires some text after * for the default catcher to work
-            '': 'home'
+            '': 'home',
+            'key/:viewKey/secret/:secretKey': 'editor'
         },
 
         home: function() {
-            var baseView = new BaseView();
             // no access without key&secretkey, forward to site root
             window.location.href = config.siteRootUrl;
         },
+
+        editor: function(viewKey, secretKey) {
+            var baseView = new BaseView({
+                viewKey: viewKey,
+                secretKey: secretKey
+            });
             app.mainRegion.show(baseView);
         }
     });

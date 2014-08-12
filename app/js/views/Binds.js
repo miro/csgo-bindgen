@@ -28,7 +28,8 @@ define([
         emptyView: NoItemsView,
 
         events: {
-            "click #generate": "generateCfg"
+            "click #generate":  "generateCfg",
+            "click #save":      "saveCfg"
         },
 
         generateCfg: function generateCfg() {
@@ -38,6 +39,10 @@ define([
             });
 
             window.prompt("Copy Buyscripts to clipboard: press Ctrl+C, Enter", scripts);
+        },
+
+        saveCfg: function saveCfg() {
+            app.vent.trigger('config:save');
         }
     });
 });

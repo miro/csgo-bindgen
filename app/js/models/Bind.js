@@ -42,6 +42,17 @@ define([
             };
 
             return returnValue;
+        },
+
+        parseFromHash: function(data) {            
+            var keyModel = new Backbone.Model(data.key);
+            var gunsList = [];
+            _.each(data.guns, function(gunHash) {
+                gunsList.push(new Backbone.Model(gunHash));
+            });
+
+            this.set('key', keyModel);
+            this.set('guns', gunsList);
         }
     });
 });

@@ -45,17 +45,27 @@ define([
         },
 
         initialize: function(options) {
-            app.data.binds = new BindsCollection();
+            // Collections
+            app.data.binds = new BindsCollection([], {
+                viewKey: options.viewKey,
+                secretKey: options.secretKey
+            });
             app.data.staging = new GunsCollection();
-            app.data.binds.model = BindModel;
 
+            // Views
             this.numpadView = new NumpadView();
             this.gunsView = new GunsView();
             this.stagingView = new StagingView({collection: app.data.staging});
             this.bindsView = new BindsView({collection: app.data.binds});
             this.controlsView = new ControlsView();
 
+            if (!_.isUndefined(options.secretKey) && !_.isUndefined(options.viewKey)) {
+                app.data.binds.getBindsFromServer();
+            }
+
             this.listenTo(app.vent, 'bind:create', this.createBind);
+            this.listenTo(app.vent, 'config:save', this.saveConfig); 
+
         },
 
         onRender: function() {
@@ -93,9 +103,11 @@ define([
             app.data.staging.reset([]);
             app.vent.trigger('bind:created');
             console.log(bindModel.getBindingString());
+        },
 
+        saveConfig: function saveConfig() {
+            app.data.binds.sendBindsToServer();
         }
-
         
     });
 });
