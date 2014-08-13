@@ -39,6 +39,8 @@ define([
 
         // Not sure if it is stupid to override Backbone functionality for this,
         // but seemed an easy way to achieve results. Revise later
+        // TODO: 
+        // - we are sending everything to the server, for eg gun prices. Unnecessary overhead.
         sendBindsToServer: function() {
             var self = this;
 
@@ -47,7 +49,11 @@ define([
                 type: 'POST',
 
                 data: '=' + JSON.stringify(self.models),
-                dataType: 'text'
+                dataType: 'text',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': 'x-requested-with'
+                }
             })
             .done(function(data, status) {
                 debugger;
@@ -65,6 +71,8 @@ define([
                 type: 'GET',
             })
             .done(function(data, status) {
+                if (_.isNull(data)) return;
+
                 var payload = JSON.parse(data.Value);
                 var models = [];
                 _.each(payload, function(hash) {
