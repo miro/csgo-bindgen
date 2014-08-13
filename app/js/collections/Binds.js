@@ -49,17 +49,13 @@ define([
                 type: 'POST',
 
                 data: '=' + JSON.stringify(self.models),
-                dataType: 'text',
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Headers': 'x-requested-with'
-                }
+                dataType: 'text'
             })
             .done(function(data, status) {
-                debugger;
+                console.log("Configs succesfully saved to the server");
             })
             .fail(function(data, status) {
-                debugger;
+                console.log("Error while saving configs to the server");
             });
         },
 
