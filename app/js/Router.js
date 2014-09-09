@@ -26,6 +26,9 @@ define([
         },
 
         editor: function(viewKey, secretKey) {
+            config.viewKey = viewKey;
+            config.secretKey = secretKey;
+
             var baseView = new BaseView({
                 viewKey: viewKey,
                 secretKey: secretKey

@@ -3,6 +3,7 @@ define([
     'underscore',
     'marionette',
     'app',
+    'config',
     'views/Bind',
     'text!templates/binds.html'
 ], function(
@@ -10,9 +11,10 @@ define([
     _,
     Marionette,
     app,
+    config,
     BindView,
     template
-    ) {
+) {
 
     NoItemsView = Backbone.Marionette.ItemView.extend({
         template: _.template('<p>No Binds</p>'),
@@ -29,8 +31,9 @@ define([
 
         events: {
             "click #generate":  "generateCfg",
-            "click #save":      "saveCfg"
-        },
+            "click #save":      "saveCfg",
+            "click #back":      "goBack"
+         },
 
         generateCfg: function generateCfg() {
             var scripts = "";
@@ -43,6 +46,11 @@ define([
 
         saveCfg: function saveCfg() {
             app.vent.trigger('config:save');
+        },
+
+        goBack: function goBack() {
+            // go back to previous .net view
+            window.location = config.siteRootUrl + '/edit/' + config.viewKey + '?key=' + config.secretKey;
         }
     });
 });
