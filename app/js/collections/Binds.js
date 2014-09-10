@@ -37,6 +37,15 @@ define([
             return (!temp ? false : true);
         },
 
+        generateCfg: function generateCfg() {
+            var scripts = "";
+            _.each(this.models, function(bindModel) {
+                scripts += bindModel.getBindingString() + '\n';
+            });
+
+            return scripts;
+        },
+
         // Not sure if it is stupid to override Backbone functionality for this,
         // but seemed an easy way to achieve results. Revise later
         // TODO: 
@@ -47,8 +56,12 @@ define([
             $.ajax({
                 url: self.url(),
                 type: 'POST',
+                contentType: "application/json; charset=utf-8",
 
-                data: '=' + JSON.stringify(self.models),
+                data: JSON.stringify({
+                    Json: JSON.stringify(self.models),
+                    Config: self.generateCfg()
+                }),
                 dataType: 'text'
             })
             .done(function(data, status) {
