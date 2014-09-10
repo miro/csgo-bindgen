@@ -1,6 +1,6 @@
 define([], function() {
 	return {
-		siteRootUrl: 'http://csgo.azurewebsites.net',
-		apiUrl: 'http://csgo.azurewebsites.net/api/'
+		siteRootUrl: 'http://gocfg.net',
+		apiUrl: 'http://gocfg.net/api/'
 	};
 });
