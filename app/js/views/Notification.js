@@ -48,13 +48,16 @@ define([
             $(this.el).css('opacity', 0);
 
             setTimeout(function() {
-                $(self.el).css({'display': 'none', 'top': '-10000px'});
+                $(self.el).css('display', 'none');
+                $('#notification-wrap').css('display', 'none');
             }, 100);
         },
 
         showNotification: function() {
             var self = this;
-            $(this.el).css({'display': 'block', 'top': '20%'});
+            $('#notification-wrap').css('display', 'block');
+            $(this.el).css('display', 'block');
+
 
             setTimeout(function() {
                 $(self.el).css('opacity', 1);
