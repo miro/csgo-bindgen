@@ -9,6 +9,7 @@ define([
     'views/Staging',
     'views/Controls',
     'views/Binds',
+    'views/Notification',
     'models/Bind',
     'text!templates/base.html'
 ], function(
@@ -22,9 +23,10 @@ define([
     StagingView,
     ControlsView,
     BindsView,
+    NotificationView,
     BindModel,
     template
-    ) {
+) {
 
     return Marionette.Layout.extend({
 
@@ -33,11 +35,12 @@ define([
         template: _.template(template),
 
         regions: {
-            numpadRegion: '#numpad-wrap',
-            gunsRegion: '#guns-wrap',
-            stagingRegion: '#staging-wrap',
-            bindsRegion: '#binds-wrap',
-            controlsRegion: '#controls-wrap'
+            numpadRegion:           '#numpad-wrap',
+            gunsRegion:             '#guns-wrap',
+            stagingRegion:          '#staging-wrap',
+            bindsRegion:            '#binds-wrap',
+            controlsRegion:         '#controls-wrap',
+            notificationRegion:     '#notification-wrap'
         },
 
         events: {
@@ -58,6 +61,7 @@ define([
             this.stagingView = new StagingView({collection: app.data.staging});
             this.bindsView = new BindsView({collection: app.data.binds});
             this.controlsView = new ControlsView();
+            this.notificationView = new NotificationView();
 
             if (!_.isUndefined(options.secretKey) && !_.isUndefined(options.viewKey)) {
                 app.data.binds.getBindsFromServer();
@@ -74,24 +78,24 @@ define([
             this.stagingRegion.show(this.stagingView);
             this.bindsRegion.show(this.bindsView);
             this.controlsRegion.show(this.controlsView);
+            this.notificationRegion.show(this.notificationView);
         },
 
         createBind: function() {
             var selectedKey = this.numpadView.getSelected();
             var selectedGuns = app.data.staging.models;
 
-            if (!selectedKey) {
-                alert("Select a Key!");
             if (!selectedKey.attributes.key) {
+                app.vent.trigger('notification', {message: "Select a Key!", type: 'error'});
                 return;
             }
             if (!selectedGuns || selectedGuns.length === 0) {
-                alert("Select at least one Gun!");
+                app.vent.trigger('notification', {message: "Select at least one Gun!", type: 'error'});
                 return;
             }
 
             if (app.data.binds.isKeyBinded(selectedKey)) {
-                alert("Key already binded!");
+                app.vent.trigger('notification', {message: "Key already binded!", type: 'error'});
                 return;
             }
 

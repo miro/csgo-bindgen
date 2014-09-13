@@ -2,12 +2,14 @@ define([
     'underscore',
     'marionette',
     'jquery',
+    'app',
     'models/Bind',
     'config'
 ], function(
     _,
     Marionette,
     $,
+    app,
     BindModel,
     config
     ) {
@@ -65,9 +67,11 @@ define([
                 dataType: 'text'
             })
             .done(function(data, status) {
+                app.vent.trigger('notification', {message: "Configs succesfully saved to the server", type: 'info'});
                 console.log("Configs succesfully saved to the server");
             })
             .fail(function(data, status) {
+                app.vent.trigger('notification', {message: "Error while saving configs to the server", type: 'error'});
                 console.log("Error while saving configs to the server");
             });
         },

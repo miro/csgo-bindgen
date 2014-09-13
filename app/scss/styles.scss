@@ -126,6 +126,44 @@ p {
 
 // ----------------------------------------
 
+// Notification box -----------------------------
+.notification-box {
+    position: absolute;
+
+    border: 2px solid $orange;
+
+    &.error {
+        background-color: $red-dark;
+    }
+    
+    top: 20%;
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    width: 400px;
+
+    margin: 0 auto;
+    padding: 1em;
+    opacity: 0; //o
+    background-color: $light-orange;
+    transition: opacity 0.5s;
+
+    box-shadow: 0px 0px 6px rgba(255, 105, 110, 0.2);
+
+    &.show {
+        opacity: 1;
+    }
+
+    .notification-text {
+        font-size: 20px;
+        text-align: justify;
+        display: inline-block;
+    }
+}
+
+
 .base-wrap {
     width: 1180px;
     margin: 15px auto 0 auto;
@@ -345,15 +383,6 @@ p {
 }
 
 
-
-
-
-
-
-
-
-
-
 /*
     CLEARFIX HACK
     (http://nicolasgallagher.com/micro-clearfix-hack/)
@@ -372,5 +401,3 @@ p {
 .hidden {
     display: none;
 }
-
-
