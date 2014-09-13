@@ -87,15 +87,17 @@ button,
         background-color: $orange;
     }
 
+    &.medium {
+        padding: 10px;
+        margin: 10px;
+        // display: block;
+    }
+
     &.big {
         padding: 15px;
         font-size: 18px;
         margin: 5px auto;
         display: block;
-
-        &:hover {
-            background-color: $light-orange;
-        }
     }
 }
 
@@ -316,7 +318,6 @@ p {
             overflow: auto;
             position: relative;
 
-            // background-color: $;
             &.none {
                 background-color: inherit;
             }
