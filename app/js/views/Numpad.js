@@ -60,6 +60,7 @@ define([
             this.ui.customKeyBtn.removeClass('selected');
             this.ui.customKeyInput.val('');
             this.$el.find('button').removeClass('selected');
+            this.selectedKeyObject = {};
         },
 
         _selectCustomKey: function() {

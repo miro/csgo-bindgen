@@ -82,6 +82,7 @@ define([
 
             if (!selectedKey) {
                 alert("Select a Key!");
+            if (!selectedKey.attributes.key) {
                 return;
             }
             if (!selectedGuns || selectedGuns.length === 0) {
