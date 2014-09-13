@@ -167,6 +167,16 @@ p {
             }
         }
 
+        #fkeys {
+            margin: 10px 20px;
+            
+            button.key {
+                float: left; 
+                width: 50px;
+                height: 50px;
+            }
+        }
+
         #metakeys, #arrows {
             padding: 0 20px;
             margin: 10px 20px;
