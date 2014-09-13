@@ -7,7 +7,6 @@ define([
     'views/Numpad',
     'views/Guns',
     'views/Staging',
-    'views/Controls',
     'views/Binds',
     'views/Notification',
     'models/Bind',
@@ -21,7 +20,6 @@ define([
     NumpadView,
     GunsView,
     StagingView,
-    ControlsView,
     BindsView,
     NotificationView,
     BindModel,
@@ -60,7 +58,6 @@ define([
             this.gunsView = new GunsView();
             this.stagingView = new StagingView({collection: app.data.staging});
             this.bindsView = new BindsView({collection: app.data.binds});
-            this.controlsView = new ControlsView();
             this.notificationView = new NotificationView();
 
             if (!_.isUndefined(options.secretKey) && !_.isUndefined(options.viewKey)) {
@@ -77,7 +74,6 @@ define([
             this.gunsRegion.show(this.gunsView);
             this.stagingRegion.show(this.stagingView);
             this.bindsRegion.show(this.bindsView);
-            this.controlsRegion.show(this.controlsView);
             this.notificationRegion.show(this.notificationView);
         },
 
