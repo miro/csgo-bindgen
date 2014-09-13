@@ -107,7 +107,6 @@ define([
             app.data.binds.add(bindModel);
             app.data.staging.reset([]);
             app.vent.trigger('bind:created');
-            console.log(bindModel.getBindingString());
         },
 
         saveConfig: function saveConfig() {
