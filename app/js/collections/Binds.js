@@ -99,6 +99,7 @@ define([
             })
             .fail(function(data, status) {
                 console.log("Error while fetching data from server");
+                window.location = config.siteRootUrl;
             });
         }
 
