@@ -6,7 +6,7 @@
         "class": "pistol"
     },
     {
-        "name": "P250/CZ75",
+        "name": "P250",
         "code": "p250",
         "price": 300,
         "class": "pistol"
@@ -26,7 +26,7 @@
 
     },
     {
-        "name": "Five-SeveN/Tec-9",
+        "name": "Five-SeveN/Tec-9/CZ75",
         "code": ["fiveseven", "tec9"],
         "price": [500, 500],
         "class": "pistol"
@@ -96,20 +96,20 @@
         "class": "rifle"
     },
     {
-        "name": "M4A4/AK-47",
-        "code": ["m4a4", "ak47"],
-        "price": [3100, 2700],
+        "name": "M4A4/M4A1-S/AK-47",
+        "code": ["m4a1", "m4a1_silencer", "ak47"],
+        "price": [3100, 2900, 2700],
         "class": "rifle"
     },
     {
         "name": "SSG 08 (Scout)",
-        "code": "scout",
+        "code": "ssg08",
         "price": 2750,
         "class": "sniper"
     },
     {
         "name": "AUG/SG 553",
-        "code": ["aug", "sg550"],
+        "code": ["aug", "sg556"],
         "price": [3300, 3000],
         "class": "sniper"
     },
